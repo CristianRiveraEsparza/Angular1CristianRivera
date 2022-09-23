@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ejemplo1Angular';
+
+  pelicula={
+    titulo:'xxx',
+    fechaLanzamiento:new Date(),
+    precio:100.49,
+  };
+
+  duplicarValor(x:number):number{
+    return x*2;
+  }
+
 }

@@ -1,0 +1,13 @@
+<div>
+    Numero1:<input type="text" [(ngModel)]="numero1" name="numero1"><br>
+    Numero2:<input type="text" [(ngModel)]="numero2" name="numero2"><br>
+
+    <select>
+        <option type="button" (click)="sumar()" value="sumar">Suma</option>
+        <option value="suma">Resta</option>
+        <option value="suma">Multiplicar</option>
+    </select>
+    <!-- <button type="button" (click)="sumar()">Calcular</button> -->
+
+    <h1>{{total}}</h1>
+</div>
