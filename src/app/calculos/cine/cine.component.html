@@ -3,13 +3,9 @@
  <div id="entradas" class="container" style="color: white; background-color: blue;">
         <h3>Entradas</h3>
         <div class="row" id="Contenedor">
-            <div class="col-6">
-                <div class="mb-3 row">
                     <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
                     <div class="col-sm-10">
-                        <input type="text">
-                    </div>
-                </div>
+                        <input type="text" [(ngModel)]="nombre" name="nombre">
             </div>
             <div class="mb-3 row">
                 <label for="num1" class="col-sm-2 col-form-label">Cantidad compredores</label>
@@ -19,22 +15,14 @@
             </div>
             <div class="mb-2 row">
                 <label for="num1" class="col-sm-2 col-form-label">Tarjeta de credito</label>
-                    <input type="radio" id="age1" name="age" value="30">
-                    <label for="age1">Si</label><br>
-                    <input type="radio" id="age2" name="age" value="60">
-                    <label for="age2">No</label><br>  
+                <input type="radio" value="si" name="tarjeta" [(ngModel)]="tSi">Si
+                <input type="radio" value="no" name="tarjeta" [(ngModel)]="tNo">No
             </div>
             <div class="mb-3 row">
                 <label for="numeroB" class="col-sm-2 col-form-label">Cantidad boletos</label>
                 <div class="col-sm-10">
-                    <input type="text">
+                    <input type="text" [(ngModel)]="numeroB" name="numeroB">
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <!-- <button (click)="tablaMult()" class="btn btn-primary">Calcular</button> -->
-            </div>
-            <div class="col-6">
-                <!-- <span *ngFor="let total of tablaRes">{{total}}<br></span> -->
             </div>
         </div>
     </div>
@@ -43,31 +31,37 @@
         <h3>Acciones</h3>
         <div class="row">
             <div class="mb-3 row">
-                <button (click)="Proceso()" class="btn btn-primary">Procesar</button>
+                <button type="button" (click)="Proceso()" class="btn btn-primary">Procesar</button>
             </div>
             <div class="col-6">
-                <!-- <span *ngFor="let total of totalPago">{{total}}<br></span> -->
             </div>
         </div>
     </div>
 
     <div class="container" style="color: white; background-color: blue;">
         <h3>Salida</h3>
-        <div class="row">
-            <div class="col-6">
                 <div class="mb-3 row">
-                    <label for="num1" class="col-sm-2 col-form-label">A pagar</label>
+                    <label class="col-sm-2 col-form-label">A pagar</label>
                     <div class="col-sm-10">
-                        <input type="text">
+                        <span *ngFor="let total of totalPago">{{total}}</span>
                     </div>
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <!-- <button (click)="tablaMult()" class="btn btn-primary">Calcular</button> -->
-            </div>
-            <div class="col-6">
-                <span *ngIf="let total of totalPago">{{total}}<br></span>
-            </div>
-        </div>
     </div>
 </div> 
+
+<!-- <div>
+    Nombre: <input type="text" [(ngModel)]="nombre" name="nombre"><br>
+    Cantidad Compradores (MAX 5): <input type="text" [(ngModel)]="comprador" name="comprador"><br>
+    Tarjeta Cinepolis: 
+    <input type="radio" value="si" name="tarjeta" [(ngModel)]="tarjetaSi">Si
+    <input type="radio" value="no" name="tarjeta" [(ngModel)]="tarjetaNo">No<br>
+
+    Cantidad Boletos: <input type="text" [(ngModel)]="boletos" name="boletos"><br>
+
+    <button type="button" (click)="procesar()">Procesar</button>
+
+    <h1>Comprador Principal: {{nombre}}</h1>
+    <h2>Boletos Comprados: {{boletos}}</h2>
+    <h2>Total: {{total}}</h2>
+    <h2>{{error}}</h2>
+</div> -->
