@@ -8,20 +8,36 @@ import { Component, OnInit } from '@angular/core';
 export class SumaComponent {
 
     total:number=0;
-    numero1;
-    numero2;
+    numero1:string='';
+    numero2:string='';
+    operacion:string='';
   constructor() { }
 
-  sumar(){
-    this.total=parseInt(this.numero1)+parseInt(this.numero2);
+  Sumar(): void{
+    switch (this.operacion) {
+      case 'Sumar':
+        this.total=parseInt(this.numero1)+parseInt(this.numero2);
+        break;
+
+        case 'Restar':
+          this.total=parseInt(this.numero1)-parseInt(this.numero2);
+          break;
+
+          case 'Multiplicar':
+            this.total=parseInt(this.numero1)*parseInt(this.numero2);
+            break;
+    
+      default:
+        break;
+    }
   }
 
-  resta(){
-    this.total=parseInt(this.numero1)-parseInt(this.numero2);
-  }
+  // resta(){
+  //   this.total=parseInt(this.numero1)-parseInt(this.numero2);
+  // }
 
-  multi(){
-    this.total=parseInt(this.numero1)*parseInt(this.numero2);
-  }
+  // multi(){
+  //   this.total=parseInt(this.numero1)*parseInt(this.numero2);
+  // }
 
 }

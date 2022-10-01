@@ -7,10 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CineComponent implements OnInit {
 
+  nombre:string;
+  compradores:number;
+  boletos:12000;
+  numeroB:number;
+  descuento:number;
+  totalPago:string[]=[];
   
-  constructor() { }
+  constructor() { 
+    this.totalPago =[];
+  }
 
   ngOnInit(): void {
+  }
+
+  Proceso():void{
+
+    this.descuento=this.boletos*this.numeroB/0.15;
+    
+    if (this.numeroB>5) {
+      this.totalPago[0]=`${this.boletos*this.numeroB-this.descuento}`;
+    }
   }
 
 

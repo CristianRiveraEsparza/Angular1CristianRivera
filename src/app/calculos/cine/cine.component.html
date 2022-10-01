@@ -1,15 +1,73 @@
-<div class="car">
+<div class="container bs5-grid-row" >
+    
+ <div id="entradas" class="container" style="color: white; background-color: blue;">
+        <h3>Entradas</h3>
+        <div class="row" id="Contenedor">
+            <div class="col-6">
+                <div class="mb-3 row">
+                    <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-10">
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="num1" class="col-sm-2 col-form-label">Cantidad compredores</label>
+                <div class="col-sm-10">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="num1" class="col-sm-2 col-form-label">Tarjeta de credito</label>
+                    <input type="radio" id="age1" name="age" value="30">
+                    <label for="age1">Si</label><br>
+                    <input type="radio" id="age2" name="age" value="60">
+                    <label for="age2">No</label><br>  
+            </div>
+            <div class="mb-3 row">
+                <label for="numeroB" class="col-sm-2 col-form-label">Cantidad boletos</label>
+                <div class="col-sm-10">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <!-- <button (click)="tablaMult()" class="btn btn-primary">Calcular</button> -->
+            </div>
+            <div class="col-6">
+                <!-- <span *ngFor="let total of tablaRes">{{total}}<br></span> -->
+            </div>
+        </div>
+    </div>
 
-    <div class="car-header">
-        CINE
+    <div class="container" style="color: white; background-color: blue;">
+        <h3>Acciones</h3>
+        <div class="row">
+            <div class="mb-3 row">
+                <button (click)="Proceso()" class="btn btn-primary">Procesar</button>
+            </div>
+            <div class="col-6">
+                <!-- <span *ngFor="let total of totalPago">{{total}}<br></span> -->
+            </div>
+        </div>
     </div>
-    <div class="car-body">
-        <p>I am a paragraph. A short one.</p>
-<ul>
-  <li>Item One</li>
-  <li>Item Two</li>
-  <li>Item Three</li>
-</ul>
-<p>I am another paragraph. Some of the <span class="block">words</span> have been wrapped in a <span>span element</span>.</p>
+
+    <div class="container" style="color: white; background-color: blue;">
+        <h3>Salida</h3>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3 row">
+                    <label for="num1" class="col-sm-2 col-form-label">A pagar</label>
+                    <div class="col-sm-10">
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <!-- <button (click)="tablaMult()" class="btn btn-primary">Calcular</button> -->
+            </div>
+            <div class="col-6">
+                <span *ngIf="let total of totalPago">{{total}}<br></span>
+            </div>
+        </div>
     </div>
-</div>
+</div> 
